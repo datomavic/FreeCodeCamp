@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Technical Documentation Page</title>
+        <meta name="description" content="Technical Documentation Page for FreeCodeCamp">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav id="navbar">
+            <header>Java Documentation</header>
+            <ul>
+                <li><a class="nav-link" href="#Overview">Overview</a></li>
+                <li><a class="nav-link" href="#Environment_Setup">Environment Setup</a></li>
+                <li><a class="nav-link" href="#Basic_Syntax">Basic Syntax</a></li>
+                <li><a class="nav-link" href="#Objects_&_Classes">Objects & Classes</a></li>
+                <li><a class="nav-link" href="#Constructors">Constructors</a></li>
+            </ul>                                                                             
+        </nav>
+        <main id="main-doc">
+            <h1>Java Documentation</h1>
+            <section class="main-section" id="Overview">
+                <header>Overview</header>
+                <p>Java is a high-level programming language originally developed by Sun Microsystems and released in 1995. Java runs on a variety of platforms, such as Windows, Mac OS, and the various versions of UNIX. This tutorial gives a complete understanding of Java. This reference will take you through simple and practical approaches while learning Java Programming language.</p>
+                <h3>Why learn Java?</h3>
+                <p>Java is a MUST for students and working professionals to become a great Software Engineer specially when they are working in Software Development Domain. I will list down some of the key advantages of learning Java Programming:</p>
+                <ul>
+                    <li><b>Object Oriented</b> - In Java, everything is an Object. Java can be easily extended since it is based on the Object model.</li>
+                    <li><b>Platform Independent</b> - Unlike many other programming languages including C and C++, when Java is compiled, it is not compiled into platform specific machine, rather into platform independent byte code. This byte code is distributed over the web and interpreted by the Virtual Machine (JVM) on whichever platform it is being run on.</li>
+                    <li><b>Simple</b> - Java is designed to be easy to learn. If you understand the basic concept of OOP Java, it would be easy to master.</li>
+                    <li><b>Secure</b> - With Java's secure feature it enables to develop virus-free, tamper-free systems. Authentication techniques are based on public-key encryption.</li>
+                    <li><b>Architecture-neutral</b> - Java compiler generates an architecture-neutral object file format, which makes the compiled code executable on many processors, with the presence of Java runtime system.</li>
+                    <li><b>Portable</b> - Being architecture-neutral and having no implementation dependent aspects of the specification makes Java portable. Compiler in Java is written in ANSI C with a clean portability boundary, which is a POSIX subset.</li>
+                    <li><b>Robust</b> - Java makes an effort to eliminate error prone situations by emphasizing mainly on compile time error checking and runtime checking.</li>
+                </ul>
+                <h3>Hello World using Java Programming</h3>
+                <p>Just to give you a little excitement about Java programming, I'm going to give you a small conventional Hello World program, You can view it below.</p>
+                <code>
+                    <pre>
+public class MyFirstJavaProgram {
+
+    /* This is my first java program.
+    * This will print 'Hello World' as the output
+    */
+
+    public static void main(String []args) {
+    System.out.println("Hello World"); // prints Hello World
+    }
+}
+                    </pre>                    
+                </code>
+                <h3>Applications of Java Programming</h3>
+                <p>The latest release of the Java Standard Edition is Java SE 8. With the advancement of Java and its widespread popularity, multiple configurations were built to suit various types of platforms. For example: J2EE for Enterprise Applications, J2ME for Mobile Applications.</p>
+                <p>The new J2 versions were renamed as Java SE, Java EE, and Java ME respectively. Java is guaranteed to be <b>Write Once, Run Anywhere.</b></p>
+                <ul>
+                    <li><b>Multithreaded</b> - With Java's multithreaded feature it is possible to write programs that can perform many tasks simultaneously. This design feature allows the developers to construct interactive applications that can run smoothly.</li>
+                    <li><b>Interpreted</b> - Java byte code is translated on the fly to native machine instructions and is not stored anywhere. The development process is more rapid and analytical since the linking is an incremental and light-weight process.</li>
+                    <li><b>High Performance</b> - With the use of Just-In-Time compilers, Java enables high performance.</li>
+                    <li><b>Distributed</b> - Java is designed for the distributed environment of the internet.</li>
+                    <li><b>Dynamic</b> - Java is considered to be more dynamic than C or C++ since it is designed to adapt to an evolving environment. Java programs can carry extensive amount of run-time information that can be used to verify and resolve accesses to objects on run-time.</li>
+                </ul>
+            </section>
+            <section class="main-section" id="Environment_Setup">
+                <header>Environment Setup</header>
+                <p>In this section, we will discuss on the different aspects of setting up a congenial environment for Java.</p>
+                <h3>Local Environment Setup</h3>
+                <p>If you are still willing to set up your environment for Java programming language, then this section guides you on how to download and set up Java on your machine. Following are the steps to set up the environment.</p>
+                <p>SE is freely available from the link Download Java. You can download a version based on your operating system.</p>
+                <p>Follow the instructions to download Java and run the .exe to install Java on your machine. Once you installed Java on your machine, you will need to set environment variables to point to correct installation directories</p>
+                <h3>Setting Up the Path for Windows</h3>
+                <p>Assuming you have installed Java in <i>c:\Program Files\java\jdk</i> directory:</p>
+                <ul>
+                    <li>Right-click on 'My Computer' and select 'Properties'.</li>
+                    <li>Click the 'Environment variables' button under the 'Advanced' tab.</li>
+                    <li>Now, alter the 'Path' variable so that it also contains the path to the Java executable. Example, if the path is currently set to '<i>C:\WINDOWS\SYSTEM32</i>', then change your path to read '<i>C:\WINDOWS\SYSTEM32;c:\Program Files\java\jdk\bin</i>'.</li>
+                </ul>
+                <h3>Popular Java Editors</h3>
+                <p>To write your Java programs, you will need a text editor. There are even more sophisticated IDEs available in the market. But for now, you can consider one of the following:</p>
+                <ul>
+                    <li><b>Notepad</b> - On Windows machine, you can use any simple text editor like Notepad (Recommended for this tutorial), TextPad.</li>
+                    <li><b>Netbeans</b> - A Java IDE that is open-source and free which can be downloaded from <a href="https://www.netbeans.org/index.html">https://www.netbeans.org/index.html</a>.</li>
+                    <li><b>Eclipse</b> - A Java IDE developed by the eclipse open-source community and can be downloaded from <a href="https://www.eclipse.org/">https://www.eclipse.org/</a></li>
+                </ul>
+            </section>
+            <section class="main-section" id="Basic_Syntax">
+                <header>Basic Syntax</header>
+                <p>When we consider a Java program, it can be defined as a collection of objects that communicate via invoking each other's methods. Let us now briefly look into what do class, object, methods, and instance variables mean.</p>
+                <ul>
+                    <li><b>Object</b> - Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behavior such as wagging their tail, barking, eating. An object is an instance of a class.</li>
+                    <li><b>Class</b> - A class can be defined as a template/blueprint that describes the behavior/state that the object of its type supports.</li>
+                    <li><b>Methods</b> - A method is basically a behavior. A class can contain many methods. It is in methods where the logics are written, data is manipulated and all the actions are executed.</li>
+                    <li><b>Instance Variables</b> - Each object has its unique set of instance variables. An object's state is created by the values assigned to these instance variables.</li>
+                </ul>
+                <h3>First Java Program</h3>
+                <p>Let us take a look at a simple code that will print <i>Hello World</i></p>
+                <code>
+                    <pre>
+public class MyFirstJavaProgram {
+
+    /* This is my first java program.
+        * This will print 'Hello World' as the output
+        */
+    
+    public static void main(String []args) {
+        System.out.println("Hello World"); // prints Hello World
+    }
+}         
+                    </pre>
+                </code>
+                <p>Let's look at how to save the file, compile, and run the program. Please follow the subsequent steps </p>
+                <ul>
+                    <li>Open notepad and add the code as above.</li>
+                    <li>Save the file as: MyFirstJavaProgram.java.</li>
+                    <li>Open a command prompt window and go to the directory where you saved the class. Assume it's C:\</li>
+                    <li>Type 'javac MyFirstJavaProgram.java' and press enter to compile your code. If there are no errors in your code, the command prompt will take you to the next line (Assumption : The path variable is set).</li>
+                    <li>Now, type ' java MyFirstJavaProgram ' to run your program.</li>
+                    <li>You will be able to see ' Hello World ' printed on the window.</li>
+                </ul>
+                <h3>Output</h3>
+                <code>
+                    C:\> javac MyFirstJavaProgram.java
+                    C:\> java MyFirstJavaProgram 
+                    Hello World
+                </code>
+                <h3>Basic Syntax</h3>
+                <p>About Java programs, it is very important to keep in mind the following points.</p>
+                <ul>
+                    <li><b>Case Sensitivity</b> - Java is case sensitive, which means identifier Hello and hello would have different meaning in Java.</li>
+                    <li><b>Class Names</b> - For all class names the first letter should be in Upper Case. If several words are used to form a name of the class, each inner word's first letter should be in Upper Case.</li>
+                    <li><b>Method Names</b> - All method names should start with a Lower Case letter. If several words are used to form the name of the method, then each inner word's first letter should be in Upper Case</li>
+                    <li><b>Program File Name</b> - Name of the program file should exactly match the class name. When saving the file, you should save it using the class name (Remember Java is case sensitive) and append '.java' to the end of the name.</li>
+                    <li><b>public static void main(String args[])</b> - Java program processing starts from the main() method which is a mandatory part of every Java program.</li>
+                </ul>
+            </section>
+            <section class="main-section" id="Objects_&_Classes">
+                <header>Objects & Classes</header>
+                <p>Java is an Object-Oriented Language. As a language that has the Object-Oriented feature, Java supports the following fundamental concepts </p>
+                <ul>
+                    <li>Polymorphism</li>
+                    <li>Inheritance</li>
+                    <li>Encapsulation</li>
+                    <li>Abstraction</li>
+                    <li>Classes</li>
+                    <li>Objects</li>
+                    <li>Instance</li>
+                    <li>Method</li>
+                    <li>Message Passing</li>
+                </ul>
+                <p>In this chapter, we will look into the concepts - Classes and Objects.</p>
+                <ul>
+                    <li><b>Object</b> - Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behaviors – wagging the tail, barking, eating. An object is an instance of a class.</li>
+                    <li><b>Class</b> - A class can be defined as a template/blueprint that describes the behavior/state that the object of its type support.</li>
+                </ul>
+                <h3>Objects in Java</h3>
+                <p>Let us now look deep into what are objects. If we consider the real-world, we can find many objects around us, cars, dogs, humans, etc. All these objects have a state and a behavior.</p>
+                <p>If we consider a dog, then its state is - name, breed, color, and the behavior is - barking, wagging the tail, running.</p>
+                <p>If you compare the software object with a real-world object, they have very similar characteristics.</p>
+                <p>Software objects also have a state and a behavior. A software object's state is stored in fields and behavior is shown via methods.</p>
+                <p>So in software development, methods operate on the internal state of an object and the object-to-object communication is done via methods.</p>
+                <h3>Classes in Java</h3>
+                <p>A class is a blueprint from which individual objects are created.</p>
+                <p>Following is a sample of a class.</p>
+                <code>
+                    <pre>
+public class Dog {
+    String breed;
+    int age;
+    String color;
+    
+    void barking() {
+    }
+    
+    void hungry() {
+    }
+    
+    void sleeping() {
+    }
+}
+                    </pre>
+                
+                </code>
+                <p>A class can contain any of the following variable types.</p>
+                <ul>
+                    <li><b>Local variables</b> - Variables defined inside methods, constructors or blocks are called local variables. The variable will be declared and initialized within the method and the variable will be destroyed when the method has completed.</li>
+                    <li><b>Instance variables</b> - Instance variables are variables within a class but outside any method. These variables are initialized when the class is instantiated. Instance variables can be accessed from inside any method, constructor or blocks of that particular class.</li>
+                    <li><b>Class variables</b> - Class variables are variables declared within a class, outside any method, with the static keyword.</li>
+                </ul>
+                <p>A class can have any number of methods to access the value of various kinds of methods. In the above example, barking(), hungry() and sleeping() are methods.</p>
+                <p>Following are some of the important topics that need to be discussed when looking into classes of the Java Language.</p>
+                <h3>Constructors</h3>
+                <p>When discussing about classes, one of the most important sub topic would be constructors. Every class has a constructor. If we do not explicitly write a constructor for a class, the Java compiler builds a default constructor for that class.</p>
+                <p>Each time a new object is created, at least one constructor will be invoked. The main rule of constructors is that they should have the same name as the class. A class can have more than one constructor.</p>
+                <p>Following is an example of a constructor.</p>
+                <code>
+                    <pre>
+public class Puppy {
+    public Puppy() {
+    }
+    
+    public Puppy(String name) {
+        // This constructor has one parameter, name.
+    }
+}
+                    </pre>
+                </code>
+                <p>Java also supports <a href="https://www.tutorialspoint.com/java/java_using_singleton.htm">Singleton Classes</a> where you would be able to create only one instance of a class.</p>
+                <p><b>Note</b> - We have two different types of constructors. We are going to discuss constructors in detail in the subsequent chapters.</p>
+                <h3>Creating an Objects</h3>
+                <p>As mentioned previously, a class provides the blueprints for objects. So basically, an object is created from a class. In Java, the new keyword is used to create new objects. There are three steps when creating an object from a class −</p>
+                <ul>
+                    <li><b>Declaration</b> - A variable declaration with a variable name with an object type.</li>
+                    <li><b>Instantiation</b> - The 'new' keyword is used to create the object.</li>
+                    <li><b>Initialization</b> - The 'new' keyword is followed by a call to a constructor. This call initializes the new object.</li>
+                </ul>
+                <p>Following is an example of an object</p>
+                <code>
+                    <pre>
+public class Puppy {
+    public Puppy(String name) {
+        // This constructor has one parameter, name.
+        System.out.println("Passed Name is :" + name );
+    }
+    
+    public static void main(String []args) {
+        // Following statement would create an object myPuppy
+        Puppy myPuppy = new Puppy( "tommy" );
+    }
+}
+                    </pre>
+                </code>
+                <p>If we compile and run the above program, then it will produce the following result - </p>
+                <h3>Output</h3>
+                <code>
+                    Passed Name is :tommy
+                </code>
+                <h3>Accessing Instance Variables and Methods</h3>
+                <p>Instance variables and methods are accessed via created objects. To access an instance variable, following is the fully qualified path −</p>
+                <code>
+                    <pre>
+/* First create an object */
+ObjectReference = new Constructor();
+
+/* Now call a variable as follows */
+ObjectReference.variableName;
+
+/* Now you can call a class method as follows */
+ObjectReference.MethodName();  
+                    </pre>   
+                </code>
+                <h3>Example</h3>
+                <p>This example explains how to access instance variables and methods of a class.</p>
+                <code>
+                    <pre>
+public class Puppy {
+    int puppyAge;
+    
+    public Puppy(String name) {
+        // This constructor has one parameter, name.
+        System.out.println("Name chosen is :" + name );
+    }
+    
+    public void setAge( int age ) {
+        puppyAge = age;
+    }
+    
+    public int getAge( ) {
+        System.out.println("Puppy's age is :" + puppyAge );
+        return puppyAge;
+    }
+    
+    public static void main(String []args) {
+        /* Object creation */
+        Puppy myPuppy = new Puppy( "tommy" );
+    
+        /* Call class method to set puppy's age */
+        myPuppy.setAge( 2 );
+    
+        /* Call another class method to get puppy's age */
+        myPuppy.getAge( );
+    
+        /* You can access instance variable as follows as well */
+        System.out.println("Variable Value :" + myPuppy.puppyAge );
+    }
+}
+                    </pre>
+                </code>
+                <p>If we compile and run the above program, then it will produce the following result - </p>
+                <h3>Output</h3>
+                <code>
+                    Name chosen is :tommy
+                    Puppy's age is :2
+                    Variable Value :2
+                </code>
+            </section>
+
+            <section class="main-section" id="Constructors">
+                <header>Constructors</header>
+                <p>A constructor initializes an object when it is created. It has the same name as its class and is syntactically similar to a method. However, constructors have no explicit return type.</p>
+                <p>Typically, you will use a constructor to give initial values to the instance variables defined by the class, or to perform any other start-up procedures required to create a fully formed object.</p>
+                <p>All classes have constructors, whether you define one or not, because Java automatically provides a default constructor that initializes all member variables to zero. However, once you define your own constructor, the default constructor is no longer used.</p>
+                <h3>Syntax</h3>
+                <p>Following is the syntax of a constructor - </p>
+                <code>
+                    <pre>
+class ClassName {
+    ClassName() {
+    }
+}
+                    </pre>
+                </code>
+                <p>Java allows two types of constructors namely - </p>
+                <ul>
+                    <li>No argument Constructors</li>
+                    <li>Parameterized Constructors</li>
+                </ul>
+                <h3>No argument Constructors</h3>
+                <p>As the name specifies the no argument constructors of Java does not accept any parameters instead, using these constructors the instance variables of a method will be initialized with fixed values for all objects.</p>
+                <h3>Example</h3>
+                <code>
+                    <pre>
+Public class MyClass {
+    Int num;
+    MyClass() {
+        num = 100;
+    }
+}
+                    </pre>
+                </code>
+                <p>You would call constructor to initialize objects as follows</p>
+                <code>
+                    <pre>
+public class ConsDemo {
+    public static void main(String args[]) {
+        MyClass t1 = new MyClass();
+        MyClass t2 = new MyClass();
+        System.out.println(t1.num + " " + t2.num);
+    }
+}
+                    </pre>
+                </code>
+                <p>This would produce the following result</p>
+                <code>
+                    100 100
+                </code>
+                <h3>Parameterized Constructors</h3>
+                <p>Most often, you will need a constructor that accepts one or more parameters. Parameters are added to a constructor in the same way that they are added to a method, just declare them inside the parentheses after the constructor's name.</p>
+                <h3>Example</h3>
+                <p>Here is a simple example that uses a constructor - </p>
+                <code>
+                    <pre>
+// A simple constructor.
+class MyClass {
+    int x;
+    
+    // Following is the constructor
+    MyClass(int i ) {
+        x = i;
+    }
+}
+                    </pre>
+                </code>
+                <p>You would call constructor to initialize objects as follows - </p>
+                <code>
+                    <pre>
+public class ConsDemo {
+    public static void main(String args[]) {
+    MyClass t1 = new MyClass( 10 );
+        MyClass t2 = new MyClass( 20 );
+        System.out.println(t1.x + " " + t2.x);
+    }
+} 
+                    </pre>
+                </code>
+                <p>This would produce the following result - </p>
+                <code>
+                    10 20
+                </code>
+            </section>
+            <p id="disclaimer">This is a sample project for FreeCodeCamp using some of the documentation found at: <a href="https://www.tutorialspoint.com/java/">https://www.tutorialspoint.com/java/</a></p>
+        </main>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Survey Form</title>
+        <meta name="description" content="Survey Form project for FreeCodeCamp">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 id="title">Social Media Survey Form</h1>
+            <p id="description">Please answer the social media engagement questions below</p>    
+        </div>
+
+        <form id="survey-form">
+            <div class="field">
+                <label id="name-label">Name:</label>
+                <input type="text" class="input" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="field">
+                <label id="email-label">Email:</label>
+                <input type="email" class="input" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="field">
+                <label id="number-label">Age (optional):</label>
+                <input type="number" class="input" id="number" placeholder="Enter your age" min=13 max=115>
+            </div>
+
+            <div class="field">
+                <label id="dropdown-label">Which social media platform do you use the most?</label>
+                <select class="input" id="dropdown" required>
+                    <option hidden value="">Select social media platform</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="youtube">YouTube</option>
+                    <option value="tiktok">Tik-Tok</option>
+                    <option value="twitter">Twitter</option>
+                    <option value="reddit">Reddit</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label class="radio-label">Would you say this social media platform makes your life better?</label>
+                <div id="radio-container">
+                    <div class="radio-option">
+                        <label for="yes">
+                            <input type="radio" value="yes" name="recommend" id="yes" class="radio-button">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio-option"> 
+                        <label for="no">
+                            <input type="radio" value="no" name="recommend" id="no" class="radio-button">
+                            No
+                        </label>
+                    </div>
+                    <div class="radio-option">
+                        <label for="idk">
+                            <input type="radio" value="idk" name="recommend" id="idk" class="radio-button">
+                            I don't know
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="checkbox-label">Why do you use this platform?</label>
+                <div id="checkbox-container">
+                    <div class="checkbox-option">
+                        <label for="entertainment">
+                            <input type="checkbox" value="entertainment" name="reason" id="entertainment">
+                            Entertainment
+                        </label>
+                    </div>
+                    <div class="checkbox-option">
+                        <label for="business">
+                            <input type="checkbox" value="business" name="reason" id="business">
+                            Business
+                        </label>
+                    </div>
+                    <div class="checkbox-option">
+                        <label for="news">
+                            <input type="checkbox" value="news" name="reason" id="news">
+                            News
+                        </label>
+                    </div>
+                    <div class="checkbox-option">
+                        <label for="socializing">
+                            <input type="checkbox" value="socializing" name="reason" id="socializing">
+                            Socializing
+                        </label>
+                    </div>
+                    <div class="checkbox-option">
+                        <label for="other">
+                            <input type="checkbox" value="other" name="reason" id="other">
+                            Other
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="textarea" >What do you dislike most about this platform?</label>
+                <textarea id="text-area" placeholder="Please enter 1-2 sentences."></textarea>
+            </div>
+
+            <button type="submit" id="submit">Submit</button>  
+        </form>
+
+
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </body>
+</html>

@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+body{
+    background-color:#45567d;
+}
+
+
+#navbar{
+    background-color: #24252a;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 1%;
+    white-space: nowrap;
+    overflow: hidden;
+    position:fixed;
+    top:0;
+    width:100%;
+}
+
+#nav_links{
+    list-style:none;
+}
+
+#nav_links li{
+    display:inline-block;
+    padding: 0px 20px;
+}
+
+#nav_links li a{
+    transition: all 0.3s ease 0s;
+}
+
+#nav_links li a:hover{
+    color: #0088a9;
+    transition: all 0.3s ease 0s;
+}
+
+
+/* accounts for navbar space when linking to anchor on current page */
+:target::before {
+    content: "";
+    display: block;
+    height: 2.5em; /* fixed header height*/
+    margin: -2.5em 0 0; /* negative fixed header height */
+  }
+
+#welcome-section{
+    min-height: 100vh;
+    font-size: 1.5em;
+    text-align:center;
+    width: 100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin: 0 auto;
+    background-color: rgba(42, 44, 59, 0.6);
+
+}
+
+#welcome-section div{
+    height: 100%;
+}
+
+#welcome-section h1{
+    font-size: 2em;
+}
+
+#welcome-section h3{
+    color: red;
+    font-size: 1em;
+}
+#projects{
+    margin: 0 1em;
+    margin-bottom: 3em;
+}
+
+#projects> h3{
+    margin: 2em 0;
+    text-align:center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.project-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.project-tile{
+    width: 100%;
+}
+
+.project-title{
+    padding-top: 1em;
+    text-align:center;
+}
+
+.project-title:hover{
+    transition: all .1s ease;
+    color:white;
+    font-weight: bold;
+}
+
+.project-screenshot{
+    width: 100%;
+}
+
+#about{
+    background-color: #262e41;
+    padding: 1em 2em;
+}
+
+#about h1{
+    text-align:center;
+    font-size: 2em;
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+#about p{
+    font-size: 1.5em;
+}
+#description{
+    text-align:center;
+    margin-bottom: 2em;
+}
+
+#about h3{
+    font-weight: bold;
+    font-size: 2em;
+    text-align:center;
+}
+
+#skills h3{
+    margin-top: 1em;
+    font-size: 2em;
+    text-align:center;
+}
+
+#skills{
+    display:flex;
+    justify-content:space-around;
+    text-align:center;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+#resume{
+    display:flex;
+    justify-content: center;
+    margin-top: 2em;
+    text-decoration: underline;
+    font-weight:bold;
+    text-align:center;
+}
+
+#resume:hover{
+    color:white;
+}
+
+.skills-image{
+    width: 100%;
+    max-width: 5em;
+}
+
+#contact{
+    margin: 1em 1em;
+}
+#contact h1{
+    text-align:center;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+#links-container{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+
+#img1{
+    width: 100px;
+}
+
+#img2{
+    width: 65px;
+}
+
+#img3{
+    width: 75px;
+}
+
+#disclaimer{
+    margin: 2em auto;
+    text-align:center;
+}
+
+@media screen and (min-width: 1160px) and (max-width: 1559px){
+    .project-grid{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(320px, 1fr));
+        grid-gap: 4rem;
+        width: 100%;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="index.js" async defer></script>
+    
+  </head>
+  <body>
+
+    <!-- Simulate a smartphone / tablet -->
+    <header id="header">
+        <!-- Top Navigation Menu -->
+        <nav class="topnav" id="nav-bar">
+          <img id="header-img" src="https://www.wasdkeyboards.com/pub/media/logo/stores/1/wasd-logo.png">
+          <div id="myLinks">
+            <!--onclick="linkClick('pricing')"-->
+            <!--onclick="linkClick('features')"-->
+            <!--onclick="linkClick('demo')"-->
+            <a onclick="linkClick('pricing')" href="#pricing" class="nav-link" >Pricing</a>
+            <a onclick="linkClick('features')" href="#features" class="nav-link">Features</a>
+            <a onclick="linkClick('demo')" href="#demo" class="nav-link">Demo</a>
+          </div>
+          <a class="icon" id="icon" onclick="burgerMenu()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </nav>
+        <div style="padding-left:16px"></div>
+        <!-- End smartphone / tablet look -->
+    </header>
+    <main id="main">
+
+      <div id="pricing-features-wrapper">
+        <div id="pricing">
+          <div id="pricing-spacer"></div>
+          <div class="slideshow-container">
+            <h3 style="text-align: center">OUR PRODUCTS</h3>
+            <div class="mySlides fade">
+              <img src="https://www.wasdkeyboards.com/pub/media/wysiwyg/hp/gallery/gallery_4.jpg">
+              <div class="text">$89.99</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="https://www.wasdkeyboards.com/pub/media/wysiwyg/hp/gallery/gallery_7.jpg">
+              <div class="text">$99.99</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="https://www.wasdkeyboards.com/pub/media/wysiwyg/hp/gallery/gallery_29.jpg">
+              <div class="text">$129.99</div>
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+          </div>
+    
+          <br>
+                    
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+          </div>
+          <br>
+          <button>Buy Now</button>
+        </div>
+    
+        <div id="features">
+          <div id="features-spacer"></div>
+          <figure class="feature-container">
+            <img class="feature-gif" id="gif-1" src="https://c.tenor.com/G1VOo6fVsn4AAAAC/keyboard-type.gif">
+            <figcaption class="feature-description">
+              <h2>Tactile Feedback</h2>
+            </figcaption>
+          </figure>
+          <figure class="feature-container">
+            <img class="feature-gif" id="gif-2" src="https://c.tenor.com/7WlUt-TDNEYAAAAM/bloody-keyboard.gif">
+            <figcaption class="feature-description">
+              <h2>Durable</h2>
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="feature-container">
+            <img class="feature-gif" id="gif-3" src="https://cdn.dribbble.com/users/3725647/screenshots/6648657/paint-roller1.gif">
+            <figcaption class="feature-description">
+              <h2>Custom Colors</h2>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+  
+      
+      <div id="demo">
+        <div id="demo-spacer"></div>
+        <h1>DEMO</h1>
+        <iframe id="video" src="https://player.vimeo.com/video/638402824?h=950b4545a4&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="WASD Keyboard Review"></iframe>
+      </div>
+
+  
+
+      <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <div>
+          <h1 id="email-h1">Sign up for our newsletter</h1>
+          <input type="email" name="email" id="email" placeholder="Enter your email..." required>
+          <input id="submit" type="submit" id="submit" value="Sign Up">
+        </div>
+  
+      </form>
+    </main>
+
+
+    <footer id="footer">
+      <div id="footer-links">
+        <a class="footer-link" href="">About</a>
+        <a class="footer-link" href="">Contact</a>
+        <a class="footer-link" href="">Terms of Service</a>
+      </div>
+      <p id="disclaimer">* This is a product landing page project for FreeCodeCamp. It has no affiliation with the WASD<sup>&trade;</sup> keyboard company. No real
+        products for sale. *</p>
+    </footer>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
