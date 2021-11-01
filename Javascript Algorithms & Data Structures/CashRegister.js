@@ -1,8 +1,62 @@
+/*
+ * FreeCodeCamp - Javascript Algorithms & Data Structures
+ * 
+ * ~ CashRegister.js ~
+ * 
+ * -Given a cash register with cash/coin amounts, a price of an item, and cash received,
+ *  calculate how much of each cash type shall be returned 
+ *  (Hundreds, Twentys, Quarters, Pennys, etc.)
+ *  based on amounts existing in cash register.
+ * 
+ * -The main issue encountered when dealing with decimal amounts is
+ *  precision loss. Throughout this code you will find mutiplication/division
+ *  by 100. This will ensure that there is no precision loss when dealing with
+ *  decimal cash amounts.
+ */
+
+
+// Test: checkCashRegister(price, cashGiven, currentCashRegister);
+console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));
+
+
 function checkCashRegister(price, cash, cid) {
   let change = cash - price;
+  let changeReturned = initializeChangeReturned(cid, change);
+
+  // Loop through register slots. Decrement change and update register. 
+  for(let i = cid.length - 1; i >= 0; i--)
+    change = deduct(cid[i], change, changeReturned);
+
+  // Revert changeReturned's dollar values to decimal format
+  changeReturned.change.forEach( (element) =>{
+      element[1] /= 100;
+  });
+  
+  // Format changeReturned obj by changing status and/or removing empty amounts 
+  formatChangeReturned(changeReturned, change);
+  return changeReturned;
+}
 
 
-  let returnObj = {
+/******** HELPER FUNCTIONS *************/
+
+//Helper function to get total amount in cash register
+function getTotalInRegister(register){
+  let totalInRegister = 0;
+  register.forEach((element) => {
+    totalInRegister += (element[1] * 100);
+  });
+  return totalInRegister / 100;
+}
+
+// Helper function to initialize a cash register object. 
+function initializeChangeReturned(cid, change){
+  /*
+   * changeReturned is the changeReturned object we will return.
+   * Object's key values are subject to change later on during calculation.
+   * By default, 'status' will be "OPEN". 
+  */
+  let changeReturned = {
     status: "OPEN",
     change: [
       ["ONE HUNDRED", 0],
@@ -16,160 +70,74 @@ function checkCashRegister(price, cash, cid) {
       ["PENNY", 0], 
     ]
   };
+  // If total in register is exactly equal to change to be given, register status will be CLOSED later.
+  if(getTotalInRegister(cid) == change)
+    changeReturned.status = "CLOSED";
 
-  let amounts = [];
-  cid.forEach((element) => {
-    amounts.push(element[1])
-  });
-  let totalInRegister = amounts.reduce((sum, cur) => {
-    return sum + cur;
-  });
-
-  totalInRegister += .00001;
-
-  if(totalInRegister < change){
-    returnObj.status = "INSUFFICIENT_FUNDS";
-    returnObj.change = [];
-    return returnObj;
-  }
-
-  if(totalInRegister - change < 0.005)
-    returnObj.status = "CLOSED";
-
-  for(let i = cid.length - 1; i >= 0; i--){
-    if(cid[i][0] == "ONE HUNDRED"){
-      while(cid[i][1] > 0){
-        if(change < 100)
-          break;
-        change -= 100;
-        cid[i][1] -= 100;
-        returnObj.change.forEach((element) => {
-          if(element.includes("ONE HUNDRED"))
-            element[1] += 100;
-        });
-      }
-    }
-    if(cid[i][0] == "TWENTY"){
-      while(cid[i][1] > 0){
-        if(change < 20)
-          break;
-        change -= 20;
-        cid[i][1] -= 20;
-        returnObj.change.forEach((element) => {
-          if(element.includes("TWENTY"))
-            element[1] += 20;
-        });
-      }
-    }
-    if(cid[i][0] == "TEN"){
-      while(cid[i][1] > 0){
-        if(change < 10)
-          break;
-        change -= 10;
-        cid[i][1] -= 10;
-        returnObj.change.forEach((element) => {
-          if(element.includes("TEN"))
-            element[1] += 10;
-        });
-      }
-    }
-    if(cid[i][0] == "FIVE"){
-      while(cid[i][1] > 0){
-        if(change < 5)
-          break;
-        change -= 5;
-        cid[i][1] -= 5;
-        returnObj.change.forEach((element) => {
-          if(element.includes("FIVE"))
-            element[1] += 5;
-        });
-      }
-    }
-    if(cid[i][0] == "ONE"){
-      while(cid[i][1] > 0){
-        if(change < 1)
-          break;
-        change -= 1;
-        cid[i][1] -= 1;
-        returnObj.change.forEach((element) => {
-          if(element.includes("ONE"))
-            element[1] += 1;
-        });
-      }
-    }
-    if(cid[i][0] == "QUARTER"){
-      while(cid[i][1] > 0){
-        if(change < .25)
-          break;
-        change -= .25;
-        cid[i][1] -= .25;
-        returnObj.change.forEach((element) => {
-          if(element.includes("QUARTER"))
-            element[1] += .25;
-        });
-      }
-    }
-    if(cid[i][0] == "DIME"){
-      while(cid[i][1] > 0){
-        if(change < .10)
-          break;
-        change -= .10;
-        cid[i][1] -= .10;
-        returnObj.change.forEach((element) => {
-          if(element.includes("DIME"))
-            element[1] += .10;
-        });
-      }
-    }
-    if(cid[i][0] == "NICKEL"){
-      while(cid[i][1] > 0){
-        if(change < .05)
-          break;
-        change -= .05;
-        cid[i][1] -= .05;
-        returnObj.change.forEach((element) => {
-          if(element.includes("NICKEL"))
-            element[1] += .05;
-        });
-      }
-    }
-    if(cid[i][0] == "PENNY"){
-      while(cid[i][1] > 0){
-        if(change < .005){
-          break;
-        }
-        change -= .01;
-        cid[i][1] -= .01;
-        returnObj.change.forEach((element) => {
-          if(element.includes("PENNY"))
-            element[1] += .01;
-        });
-      }
-    } 
-  }
-  
-
-  //filter out any 0 amounts from amountReturned
-  if(returnObj.status == "OPEN"){
-    returnObj.change = returnObj.change.filter((element) => {
-      if(element[1] > 0)
-        return true;
-    });
-  }
-
-  if(returnObj.status == "CLOSED"){
-    returnObj.change = returnObj.change.reverse();
-    returnObj.change[0][1] = parseFloat(returnObj.change[0][1].toFixed(1));
-  }
-  
-  if(change > 0.005){
-    returnObj.status = "INSUFFICIENT_FUNDS";
-    returnObj.change = [];
-  }
-
-  console.log(returnObj);
-  console.log("------")
-  return returnObj;
+  return changeReturned;
 }
 
-checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])
+//Helper function which returns number-value of CID[0]'s string. 
+function getDecrementer(str){
+  switch(str){
+      case 'ONE HUNDRED': 
+        return 100;
+      case 'TWENTY': 
+        return 20;
+      case 'TEN':
+        return 10;
+      case 'FIVE':
+        return 5;
+      case 'ONE':
+        return 1;
+      case 'QUARTER':
+        return 0.25;
+      case 'DIME':
+        return 0.1;
+      case 'NICKEL':
+        return 0.05;
+      case 'PENNY':
+        return 0.01;
+    }
+}
+
+/*
+ * Helper function which loops through current register slot and
+ * decrements change-to-be-given by slot's dollar amount until slot is empty.
+ * Once/if slot is empty, return change-to-be-given. 
+*/
+function deduct(registerSlot, change, changeReturned){
+    let decrementer = getDecrementer(registerSlot[0]);
+    change = Math.round(change * 100);
+    decrementer *= 100;
+    registerSlot[1] *= 100;
+    while(registerSlot[1] > 0){
+      if(change < decrementer)
+        break;
+      change -= decrementer;
+      registerSlot[1] -= decrementer;
+      changeReturned.change.forEach((element) => {
+        if(element.includes(registerSlot[0]))
+          element[1] += decrementer;
+      });
+    }
+    change /= 100;
+    decrementer /= 100;
+    registerSlot[1] /= 100;
+    return change;
+}
+
+// Helper function to format changeReturned object
+function formatChangeReturned(changeReturned, change){
+  if(changeReturned.status == "OPEN"){
+    changeReturned.change = changeReturned.change.filter((element) => {
+      if(element[1] > 0) return true;
+    });
+  }
+  if(changeReturned.status == "CLOSED")
+    changeReturned.change = changeReturned.change.reverse();
+  if(change > 0){
+    changeReturned.status = "INSUFFICIENT_FUNDS";
+    changeReturned.change = [];
+  }
+}
