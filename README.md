@@ -3,8 +3,8 @@ Projects for FreeCodeCamp.org's curriculum.
 
 In this repo you will find my FreeCodeCamp projects for the following certifications:
 
-**Responsive Web Design Certification**
-**Javascript Algorithms & Data Structures Certification**
+* **Responsive Web Design Certification**
+* **Javascript Algorithms & Data Structures Certification**
 -----
 **Responsive Web Design (HTML & CSS) projects:**
 
