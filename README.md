@@ -22,19 +22,13 @@ In this repo you will find my FreeCodeCamp projects for the following certificat
 
 * CaesarsCipher.js
 
-	* Decoding ROT-13 cipher
-
 * CashRegister.js
 
 * PalindromeChecker.js
 
 * RomanNumeralConverter.js
 
-	* Convert number into Roman numerals
-
 * TelephoneNumberValidator.js
-
-	* Validate phone number format
 
 -----
 
