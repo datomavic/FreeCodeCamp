@@ -1,16 +1,12 @@
 # FreeCodeCamp #
-
-  
-
 Projects for FreeCodeCamp.org's curriculum.
-
-  
 
 In this repo you will find my FreeCodeCamp projects for the following certifications:
 
-  
-
-**Responsive Web Design Certification** (HTML & CSS)
+**Responsive Web Design Certification**
+**Javascript Algorithms & Data Structures Certification**
+-----
+**Responsive Web Design (HTML & CSS) projects:**
 
 * Portfolio Website
 
@@ -22,7 +18,7 @@ In this repo you will find my FreeCodeCamp projects for the following certificat
 
 * Technical Documentation Page
 
-**Javascript Algorithms & Data Structures Certification**
+**Javascript Algorithms & Data Structures projects:**
 
 * CaesarsCipher.js
 
@@ -39,3 +35,7 @@ In this repo you will find my FreeCodeCamp projects for the following certificat
 * TelephoneNumberValidator.js
 
 	* Validate phone number format
+
+-----
+
+View my FCC certificates: https://www.freecodecamp.org/datomavic
