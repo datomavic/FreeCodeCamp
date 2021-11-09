@@ -34,6 +34,6 @@ In this repo you will find my FreeCodeCamp projects for the following certificat
 
 View my FCC certificates at: https://www.freecodecamp.org/datomavic
 
-![alt text](https://github.com/datomavic/FreeCodeCamp/blob/main/Responsive%20Web%20Design%20Certificate.png?raw=true)
+![alt text](https://raw.githubusercontent.com/datomavic/FreeCodeCamp/main/Responsive%20Web%20Design%20Certificate.png)
 
-![alt text](https://github.com/datomavic/FreeCodeCamp/blob/main/Javascript%20Algorithms%20%26%20Data%20Structures%20Certificate.png?raw=true)
+![alt text](https://raw.githubusercontent.com/datomavic/FreeCodeCamp/main/Javascript%20Algorithms%20%26%20Data%20Structures%20Certificate.png)
